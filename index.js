@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
 const fs = require('fs');
+const token = process.env.token;
 
 fs.readdir('./Commandes/', (error, f) => {
     if (error) { return console.error(error); }
@@ -26,4 +27,4 @@ fs.readdir('./Events/', (error, f) => {
         });
 });
 
-client.login('NjgzMTE0NjA5NTc3OTUxMzY1.Xlm8tg.rR1-7S8YWv7fb47a2npG78WFw9k');
+client.login(token);
